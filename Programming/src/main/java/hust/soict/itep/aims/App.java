@@ -1,23 +1,20 @@
-package hust.soict.itep.aims.view;
+package hust.soict.itep.aims;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class CartScreen extends Application {
-
+public class App extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/cart.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root, 1024, 768);
+            BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("/fxml/cart.fxml"));
+            Scene scene = new Scene(root);
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Cart");
             primaryStage.show();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
